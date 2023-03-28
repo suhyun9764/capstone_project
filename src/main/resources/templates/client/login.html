@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+  <form action="/member/login" method="post">
+    <div class="form-group">
+      <p>
+        <label for="name"></label>
+        <input type="text" id="name" name="name" placeholder="아이디">
+      </p>
+      <p>
+      <label for="name"></label>
+      <input type="text" id="pwd" name="pwd" placeholder="비밀번호">
+      </p>
+    </div>
+    <button type="submit">로그인</button>
+  </form>
+  <P>
+  <a href="/client/register">회원가입</a>
+  </P>
+
+  <P>
+    <a href="/client/findAccount">아이디/비밀번호 찾기</a>
+  </P>
+
+  <form action="/client" method="get">
+    <button type="submit">회원목록</button>
+  </form>
+</div> <!-- /container -->
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+  <form action="/client/findID" method="get">
+    <div class="form-group">
+      <p>
+        <label for="name"></label>
+        <input type="text" id="name" name="name" placeholder="이름">
+      </p>
+      <p>
+        <label for="studentNumber"></label>
+        <input type="text" id="studentNumber" name="studentNumber" placeholder="학번">
+      </p>
+      <label for="age"></label>
+      <input type="text" id="age" name="age" placeholder="생년월일">
+      </p>
+    </div>
+    <button type="submit">아이디 찾기</button>
+  </form>
+
+  <form action="/client/findPwd" method="get">
+    <div class="form-group">
+      <p>
+        <label for="name"></label>
+        <input type="text" id="nameP" name="name" placeholder="이름">
+      </p>
+      <label for="id"></label>
+      <input type="text" id="id" name="id" placeholder="아이디">
+      </p>
+      <p>
+        <label for="studentNumberP"></label>
+        <input type="text" id="studentNumberP" name="studentNumber" placeholder="학번">
+      </p>
+    </div>
+    <button type="submit">비밀번호 찾기</button>
+  </form>
+
+</div> <!-- /container -->
+</body>
+
+</html>
