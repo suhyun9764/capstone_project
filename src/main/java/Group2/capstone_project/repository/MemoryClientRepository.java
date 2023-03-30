@@ -12,9 +12,8 @@ public class MemoryClientRepository implements ClientRepository{
 
     private static List<Client> clients = new ArrayList<>();
     @Override
-    public Client save(Client client) {
+    public void save(Client client) {
         clients.add(client);
-        return client;
     }
 
     @Override
