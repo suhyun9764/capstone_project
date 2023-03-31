@@ -7,10 +7,6 @@ import Group2.capstone_project.service.clientService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
 
@@ -32,6 +28,4 @@ public class SpringConfig {
     public ClientRepository clientRepository(){
         return new MysqlClientRepository(dataSource);
     }
-
-
 }

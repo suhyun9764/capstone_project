@@ -3,6 +3,7 @@ package Group2.capstone_project.controller;
 import Group2.capstone_project.domain.Client;
 import Group2.capstone_project.service.clientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,11 +13,14 @@ import java.util.List;
 
 @Controller
 public class clientController {
+
+    private final PasswordEncoder passwordEncoder;
     private final clientService clientserivce;
 
     @Autowired
-    public clientController(clientService clientService){
+    public clientController(clientService clientService,PasswordEncoder passwordEncoder){
         this.clientserivce = clientService;
+        this.passwordEncoder=passwordEncoder;
     }
 
     @GetMapping("/client/login")
@@ -41,7 +45,7 @@ public class clientController {
         client.setName(clientForm.getName());
         client.setAge(clientForm.getAge());
         client.setStudentNumber(clientForm.getStudentNumber());
-        client.setPwd(clientForm.getPassword());
+        client.setPwd(passwordEncoder.encode(clientForm.getPassword()));
 
         clientserivce.join(client);
 

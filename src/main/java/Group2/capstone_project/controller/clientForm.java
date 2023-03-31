@@ -1,12 +1,17 @@
 package Group2.capstone_project.controller;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 public class clientForm {
+
 
     private String id;
     private String name;
     private String age;
     private String studentNumber;
     private String password;
+
+
 
     public String getId() {
         return id;

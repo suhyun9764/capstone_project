@@ -3,6 +3,7 @@ package Group2.capstone_project.repository;
 import Group2.capstone_project.domain.Client;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -57,7 +58,6 @@ public class MysqlClientRepository implements ClientRepository{
             client.setName(rs.getString("name"));
             client.setStudentNumber(rs.getString("studentNumber"));
             client.setAge(rs.getString("age"));
-            client.setPwd(rs.getString("pwd"));
 
 
             return client;
