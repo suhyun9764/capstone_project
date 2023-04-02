@@ -66,7 +66,7 @@ public class clientController {
         client.setStudentNumber(clientForm.getStudentNumber());
         client.setAge(clientForm.getAge());
         String result = clientserivce.findId(client.getName(), clientForm.getStudentNumber(), client.getAge());
-
+        System.out.println(result);
         model.addAttribute("result",result);
         return "client/checkyourId";
     }

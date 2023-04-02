@@ -26,8 +26,9 @@ public class MysqlClientRepository implements ClientRepository{
 
     @Override
     public Optional<Client> findId(String name, String studentNumber, String age) {
-        String sql = "SELECT * FROM client where name = name and studentNumber = studentNumber and age = age";
-        List<Client> result = jdbcTemplate.query(sql,clientRowMapper());
+        String[] object = {name,studentNumber,age};
+        String sql = "SELECT * FROM client where name = ? and studentNumber = ? and age = ?";
+        List<Client> result = jdbcTemplate.query(sql,clientRowMapper(),object);
         return result.stream().findAny();
 
     }
@@ -58,6 +59,11 @@ public class MysqlClientRepository implements ClientRepository{
             client.setName(rs.getString("name"));
             client.setStudentNumber(rs.getString("studentNumber"));
             client.setAge(rs.getString("age"));
+
+            System.out.println(rs.getString("id"));
+            System.out.println(rs.getString("name"));
+            System.out.println(rs.getString("studentNumber"));
+            System.out.println(rs.getString("age"));
 
 
             return client;
