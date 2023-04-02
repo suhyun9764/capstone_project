@@ -23,7 +23,6 @@ public class clientForm {
 
     public String getName() {
 
-        System.out.println("form"+id);
         return name;
     }
 

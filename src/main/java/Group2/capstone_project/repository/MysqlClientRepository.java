@@ -60,11 +60,6 @@ public class MysqlClientRepository implements ClientRepository{
             client.setStudentNumber(rs.getString("studentNumber"));
             client.setAge(rs.getString("age"));
 
-            System.out.println(rs.getString("id"));
-            System.out.println(rs.getString("name"));
-            System.out.println(rs.getString("studentNumber"));
-            System.out.println(rs.getString("age"));
-
 
             return client;
         };
